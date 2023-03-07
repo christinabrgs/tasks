@@ -1,0 +1,34 @@
+<html>
+<head>
+<script>
+
+
+let count = 0
+
+function increaseCount() {
+count = count + 1
+document.querySelector('.showCount').innerHTML = count;
+}
+function decreaseCount() {
+count = count - 1
+document.querySelector('.showCount').innerHTML = count;
+}
+// when the page first loads javascript won't be able
+// to access the dom, so to access the dom whne hte page loads
+// you put that code in the window.onload function
+window.onload = () => {
+document.querySelector('.showCount').innerHTML = count;
+}
+</script>
+</head>
+
+<body>
+
+<div class='showCount'>
+</div>
+<button onclick='increaseCount()'>increase</button>
+<button onclick='decreaseCount()'>decrease</button>
+
+
+</body>
+</html>
