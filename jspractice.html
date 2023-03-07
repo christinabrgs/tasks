@@ -13,12 +13,24 @@ function decreaseCount() {
 count = count - 1
 document.querySelector('.showCount').innerHTML = count;
 }
+
+function Show() {
+if (increaseCount() === 2) 
+document.querySelector('.countOfTwo').innerHTML = 'foobar';
+
+}
+
 // when the page first loads javascript won't be able
 // to access the dom, so to access the dom whne hte page loads
 // you put that code in the window.onload function
 window.onload = () => {
 document.querySelector('.showCount').innerHTML = count;
 }
+
+window.onload = () => {
+document.querySelector('.countOfTwo').innerHTML = 'foobar';
+}
+
 </script>
 </head>
 
@@ -26,6 +38,10 @@ document.querySelector('.showCount').innerHTML = count;
 
 <div class='showCount'>
 </div>
+
+<div class='countOfTwo'>
+</div>
+
 <button onclick='increaseCount()'>increase</button>
 <button onclick='decreaseCount()'>decrease</button>
 
