@@ -4,43 +4,50 @@
 
 
 let count = 0
-let output = '"'
 
+
+
+//     else (count % 5 === 0 && count % 3 === 0) {
+//     document.querySelector('.countOfTwo').innerHTML = 'fizzbuzz'; }
+    
 
 function increaseCount() {
 count = count + 1
 document.querySelector('.showCount').innerHTML = count;
-showText()
+document.querySelector('.countOfTwo').innerHTML = ''
+    if (count % 3 === 0) {
+    document.querySelector('.countOfTwo').innerHTML = 'fizz';
+    } 
+    else if (count % 5 === 0) {
+    document.querySelector('.countOfTwo').innerHTML = 'buzz';
+    }
+    else if (count % 5 === 0 && count % 3 === 0) {
+    document.querySelector('.countOfTwo').innerHTML = 'fizzbuzz'; 
+    }
 }
+
 function decreaseCount() {
 count = count - 1
 document.querySelector('.showCount').innerHTML = count;
-showText()
+document.querySelector('.countOfTwo').innerHTML = ''
+    if (count % 3 === 0) {
+    document.querySelector('.countOfTwo').innerHTML = 'fizz';
+    } 
+    else if (count % 5 === 0) {
+    document.querySelector('.countOfTwo').innerHTML = 'buzz';
+    } 
+    else if (count % 5 === 0 && count % 3 === 0) {
+    document.querySelector('.countOfTwo').innerHTML = 'fizzbuzz'; 
+    }
 }
 
-function showText() {
-if (count %= 3 == 0) {
-document.querySelector('.countOfTwo').innerHTML = 'fizz';
-}
-else if (count %= 5 == 0) {
-document.querySelector('.countOfTwo').innerHTML = 'buzz';
-}
-else if ((count %= 5 == 0) && (count %= 3 == 0)) {
-document.querySelector('.countOfTwo').innerHTML = 'fizzbuzz';
-}
-return showText()
-}
+
 
 // when the page first loads javascript won't be able
 // to access the dom, so to access the dom whne hte page loads
 // you put that code in the window.onload function
 window.onload = () => {
 document.querySelector('.showCount').innerHTML = count;
-}
-
-window.onload = () => {
-document.querySelector('.countOfTwo').innerHTML = showText();
-console.log('am I setting something equal to showText(), show texts value is : ', showText())
 }
 
 </script>
